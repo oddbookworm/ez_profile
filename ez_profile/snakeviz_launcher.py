@@ -2,14 +2,16 @@ import atexit
 from os import popen
 import sys
 
+from . import profiler
+
 try:
     import snakeviz
+
     sv = True
 except ImportError:
     print("snakeviz not found, will not display output in browser")
     sv = False
 
-from . import profiler
 
 def handle_exit():
     profiler.on_exit()
@@ -19,8 +21,9 @@ def handle_exit():
         proc = popen("{} -m snakeviz stats.prof".format(sys.executable))
         proc.read()
         proc.close()
-        
+
     else:
         profiler.profiler.print_stats()
+
 
 atexit.register(handle_exit)
