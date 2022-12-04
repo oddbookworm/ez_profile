@@ -1,15 +1,18 @@
 from sys import argv
 if "--ignore" not in argv:
-    from os import popen
+    from subprocess import Popen
+    from time import sleep
     import sys
+    import signal
 
-    proc = popen(f'"{sys.executable}" -m cProfile -o stats.prof "{argv[0]}" --ignore')
-    print(proc.read())
-    proc.close()
+    profile_proc = Popen([f'{sys.executable}', '-m', 'cProfile', '-o', 'stats.prof', f'{argv[0]}', '--ignore'], shell=True)
+    profile_proc.wait()
 
-    print("launching snakeviz. Ctrl-C to close")
-    proc = popen(f'"{sys.executable}" -m snakeviz stats.prof')
-    proc.read()
-    proc.close()
+    sv_proc = Popen([sys.executable, "-m", "snakeviz", "stats.prof"], shell=True)
+    try:
+        sleep(5)
+        raise SystemExit
+    except SystemExit:
+        sv_proc.send_signal(signal.CTRL_C_EVENT)
 
     quit()
