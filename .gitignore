@@ -1,0 +1,4 @@
+venv
+*.prof
+main.py
+ez_profile/__pycache__
