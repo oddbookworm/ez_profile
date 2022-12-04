@@ -1,8 +1,9 @@
-A simple library for a one-liner performance profile using `cProfile`!
-
-If `snakeviz` is installed in your current environment, then the snakeviz
-output will be shown in your default browser. Otherwise, your performance
-profile will be printed to the console.
+A simple library for a one-liner performance profile using `cProfile`
+and `snakeviz`! Upon import, will profile your code (profile file will
+be `stats.prof` in your current working directory) and launch `snakeviz`
+to visualize it. Snakeviz's webserver will be open for about 5 seconds
+before it gets killed by `ez_profile`. The webpage will still be visible
+and interactable though, until you refresh the page.
 
 Usage:
 
