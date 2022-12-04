@@ -6,3 +6,5 @@ ez_profile/__pycache__
 build
 dist
 ez_profile.egg-info
+
+.pypirc
