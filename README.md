@@ -9,5 +9,7 @@ Usage:
 ```
 import ez_profile # this is all you need
 
-\<all of your other code\>
+<all of your other code>
 ```
+
+Credit for the idea goes to [matiiss](https://github.com/matiiss)
