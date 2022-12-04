@@ -1,5 +1,6 @@
 import atexit
 from os import popen
+import sys
 
 try:
     import snakeviz
@@ -15,7 +16,7 @@ def handle_exit():
 
     if sv:
         print("Displaying result in browser. Ctrl-C when finished.")
-        proc = popen('python -m snakeviz stats.prof')
+        proc = popen("{} -m snakeviz stats.prof".format(sys.executable))
         proc.read()
         proc.close()
         
