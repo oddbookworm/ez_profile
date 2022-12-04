@@ -13,9 +13,17 @@ This is meant for internal usage, but if you don't want `ez_profile` to profile
 your code, you can pass the `--ignore` commandline flag. This will bypass `ez_profile`
 completely.
 
+Notes about usage:
+`import ez_profile` should be at the top of your main file. It profiles the
+entire project, and to do so, it runs the main file in a separate process.
+If you put this anywhere else in your project, the part before `import ez_profile`
+will not be profiled, and the whole project will be killed after the profiling is
+completed.
+
 Usage:
 
 ```
+# note that this should be at the top of your script
 import ez_profile # this is all you need
 
 <all of your other code>
