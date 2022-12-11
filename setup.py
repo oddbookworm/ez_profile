@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-__ver = "0.1.3"
+__ver = "0.1.4"
 
 setup(
     name="ez_profile",
@@ -16,3 +16,8 @@ setup(
     keywords=["ez_profile"],
     classifiers=[],
 )
+
+# release procedure:
+# create github release
+# python setup.py sdist
+# twine upload dist/*
