@@ -1,4 +1,4 @@
-from sys import argv
+from sys import argv, exit
 if "--ignore" not in argv:
     from subprocess import Popen
     from time import sleep
@@ -13,6 +13,6 @@ if "--ignore" not in argv:
         sleep(5)
         raise SystemExit
     except SystemExit:
-        sv_proc.send_signal(signal.CTRL_C_EVENT)
+        sv_proc.send_signal(signal.SIGTERM)
 
-    quit()
+    sys.exit()
