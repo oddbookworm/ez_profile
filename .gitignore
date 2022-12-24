@@ -2,6 +2,7 @@ venv
 *.prof
 main.py
 ez_profile/__pycache__
+.vscode
 *.whl
 
 build
