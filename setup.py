@@ -6,7 +6,7 @@ try:
 except (IOError, ImportError):
     long_description = open("README.md").read()
 
-__ver = "0.1.4"
+__ver = "0.1.5"
 
 setup(
     name="ez_profile",
