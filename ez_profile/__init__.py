@@ -9,10 +9,7 @@ if "--ignore" not in argv:
     profile_proc.wait()
 
     sv_proc = Popen([sys.executable, "-m", "snakeviz", "stats.prof"], shell=True)
-    try:
-        sleep(5)
-        raise SystemExit
-    except SystemExit:
-        sv_proc.send_signal(signal.SIGTERM)
+    sleep(5)
+    sv_proc.send_signal(signal.CTRL_C_EVENT)
 
     sys.exit()
