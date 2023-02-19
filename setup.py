@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 try:
     import pypandoc
     long_description = pypandoc.convert_file("README.md", "rst")
-except (IOError, ImportError):
+except (IOError, ImportError) as e:
     long_description = open("README.md").read()
 
 __ver = "0.1.6"

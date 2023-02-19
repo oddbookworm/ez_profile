@@ -32,4 +32,11 @@ import ez_profile # this is all you need
 <all of your other code>
 ```
 
+**New in 0.1.6**
+`--fname` commandline argument to specify where you want the output profile to be saved
+```
+python file.py --fname "/path/to/custom/location/file.prof"
+python file.py --fname "custom_filename.prof"
+```
+
 Credit for the idea goes to [matiiss](https://github.com/matiiss)
