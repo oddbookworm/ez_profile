@@ -12,11 +12,18 @@ if "--ignore" not in argv:
         except IndexError:
             raise RuntimeError("Unspecified filename")
 
+    gui_option = "snakeviz"
+    if "--gui" in argv:
+        try:
+            gui_option = argv[argv.index("--gui")+1]
+        except IndexError:
+            raise RuntimeError("Unspecified GUI option")
+
     profile_proc = Popen([f'{sys.executable}', '-m', 'cProfile', '-o', output_file_name , f'{argv[0]}', '--ignore'], shell=True)
     profile_proc.wait()
 
-    sv_proc = Popen([sys.executable, "-m", "snakeviz", output_file_name], shell=True)
-    sleep(5)
+    sv_proc = Popen([sys.executable, "-m", gui_option, output_file_name], shell=True)
+    sleep(10)
     sv_proc.send_signal(signal.CTRL_C_EVENT)
 
     sys.exit()
