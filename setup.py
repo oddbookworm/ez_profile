@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 long_description = open("README.md").read()
 
-__ver = "0.1.9"
+__ver = "0.2.0"
 
 setup(
     name="ez_profile",
