@@ -36,8 +36,8 @@ if "--ignore" not in argv:
     except KeyboardInterrupt:
         pass
 
-    sv_proc = Popen([sys.executable, "-m", gui_option, output_file_name], shell=True)
+    sv_proc = Popen([sys.executable, "-m", gui_option, output_file_name])
     sleep(10)
-    sv_proc.send_signal(signal.CTRL_C_EVENT)
+    sv_proc.send_signal(signal.SIGINT)
 
     sys.exit()
