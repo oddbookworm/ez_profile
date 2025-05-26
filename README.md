@@ -39,7 +39,7 @@ import ez_profile # this is all you need
 
 **New in 0.1.6**
 `--fname` commandline argument to specify where you want the output profile to be saved
-```
+```bash
 python file.py --fname "/path/to/custom/location/file.prof"
 python file.py --fname "custom_filename.prof"
 ```
@@ -47,7 +47,7 @@ python file.py --fname "custom_filename.prof"
 **New in 0.1.7**
 `--gui` commandline argument to specify which profile viewer you want to use. Defaults to "snakeviz"
 For example, if you want to use [tuna](https://pypi.org/project/tuna/) instead, you can.
-```
+```bash
 python file.py --gui tuna
 ```
 
