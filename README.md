@@ -9,7 +9,7 @@ to visualize it. The snakeviz webserver will be open for about 5 seconds
 before it gets killed by `ez_profile`. The webpage will still be visible
 and interactable though, until you refresh the page.
 
-[!WARNING]
+> [!WARNING]
 > There is a problem with IDLE where the webserver may not be killed,
 > but a `SystemError` will get raised. This is a known problem and appears to
 > be an issue with IDLE and/or Python itself. If I find a solution, I will
@@ -19,7 +19,7 @@ This is meant for internal usage, but if you dont want `ez_profile` to profile
 your code, you can pass the `--ignore` commandline flag. This will bypass `ez_profile`
 completely.
 
-# Usage
+## Usage
 
 Notes about usage:
 `import ez_profile` should be at the top of your main file. It profiles the
@@ -51,5 +51,6 @@ For example, if you want to use [tuna](https://pypi.org/project/tuna/) instead, 
 python file.py --gui tuna
 ```
 
+## Credits
 
 Credit for the idea goes to [matiiss](https://github.com/matiiss)
