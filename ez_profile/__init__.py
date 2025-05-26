@@ -6,19 +6,23 @@ if "--ignore" not in argv:
     import sys
     import signal
 
-    output_file_name = "stats.prof"
     if "--fname" in argv:
         try:
             output_file_name = argv[argv.index("--fname") + 1]
         except IndexError:
             raise RuntimeError("Unspecified filename")
+    
+    else:
+	output_file_name = "stats.prof"
 
-    gui_option = "snakeviz"
     if "--gui" in argv:
         try:
             gui_option = argv[argv.index("--gui") + 1]
         except IndexError:
             raise RuntimeError("Unspecified GUI option")
+
+    else:
+	gui_option = 'snakeviz'
 
     profile_proc = Popen(
         [
@@ -33,6 +37,7 @@ if "--ignore" not in argv:
     )
     try:
         profile_proc.wait()
+
     except KeyboardInterrupt:
         pass
 
