@@ -17,6 +17,12 @@ This is meant for internal usage, but if you dont want `ez_profile` to profile
 your code, you can pass the `--ignore` or `-i` commandline flag. This will bypass `ez_profile`
 completely.
 
+## Installation 
+
+just run this in the terminal: 
+```py 
+pip install ez_profile
+```
 ## Usage
 
 Notes about usage:
