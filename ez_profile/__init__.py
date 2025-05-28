@@ -5,16 +5,14 @@ if ("--ignore", "-i") not in sys.argv:
     from time import sleep
     import signal
 
-    
     if ("--fname", "-f") in sys.argv:
         try:
             output_file_name = sys.argv[sys.argv.index(("--fname", "-f")) + 1]
         except IndexError:
             raise RuntimeError("Unspecified filename")
     else:
-					output_file_name = "stats.prof"
+        output_file_name = "stats.prof"
 
-    
     if ("--gui", "-g") in sys.argv:
         try:
             gui_option = sys.argv[sys.argv.index(("--gui", "-g")) + 1]
