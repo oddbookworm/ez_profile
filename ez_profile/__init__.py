@@ -40,7 +40,7 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
             "cProfile",
             "-o",
             output_file_name,
-            f"{argv[0]}",
+            f"{sys.argv[0]}",
             "--ignore",
         ]
     )
