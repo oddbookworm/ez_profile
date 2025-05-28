@@ -1,24 +1,27 @@
-from sys import argv
+import sys
 
-if "--ignore" not in argv:
+if ("--ignore", "-i") not in sys.argv:
     from subprocess import Popen
     from time import sleep
-    import sys
     import signal
 
-    output_file_name = "stats.prof"
-    if "--fname" in argv:
+    
+    if ("--fname", "-f") in sys.argv:
         try:
-            output_file_name = argv[argv.index("--fname") + 1]
+            output_file_name = sys.argv[sys.argv.index("--fname") + 1]
         except IndexError:
             raise RuntimeError("Unspecified filename")
+    else:
+					output_file_name = "stats.prof"
 
-    gui_option = "snakeviz"
-    if "--gui" in argv:
+    
+    if ("--gui", "-g") in argv:
         try:
             gui_option = argv[argv.index("--gui") + 1]
         except IndexError:
             raise RuntimeError("Unspecified GUI option")
+    else:
+        gui_option = "snakeviz"
 
     profile_proc = Popen(
         [
@@ -27,7 +30,7 @@ if "--ignore" not in argv:
             "cProfile",
             "-o",
             output_file_name,
-            f"{argv[0]}",
+            f"{sys.argv[0]}",
             "--ignore",
         ]
     )
