@@ -26,11 +26,24 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
             gui_option = sys.argv[sys.argv.index("--gui") + 1]
         except IndexError:
             raise RuntimeError("Unspecified GUI option")
+
     elif "-g" in sys.argv:
         try:
             gui_option = sys.argv[sys.argv.index("--gui") + 1]
         except IndexError:
             raise RuntimeError("Unspecified GUI option")
+
+    profile_proc = Popen(
+        [
+            f"{sys.executable}",
+            "-m",
+            "cProfile",
+            "-o",
+            output_file_name,
+            f"{argv[0]}",
+            "--ignore",
+        ]
+    )
 
     try:
         profile_proc.wait()
