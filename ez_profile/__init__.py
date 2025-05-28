@@ -39,6 +39,10 @@ if ("--ignore", "-i") not in sys.argv:
 
     sv_proc = Popen([sys.executable, "-m", gui_option, output_file_name])
     sleep(10)
-    sv_proc.send_signal(signal.SIGINT)
+
+		 if sys.platform == "win32":
+        sv_proc.send_signal(signal.CTRL_C_EVENT)
+    else:
+        sv_proc.send_signal(signal.SIGINT)
 
     sys.exit()
