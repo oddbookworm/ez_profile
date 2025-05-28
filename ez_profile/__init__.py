@@ -8,16 +8,16 @@ if ("--ignore", "-i") not in sys.argv:
     
     if ("--fname", "-f") in sys.argv:
         try:
-            output_file_name = sys.argv[sys.argv.index("--fname") + 1]
+            output_file_name = sys.argv[sys.argv.index(("--fname", "-f")) + 1]
         except IndexError:
             raise RuntimeError("Unspecified filename")
     else:
 					output_file_name = "stats.prof"
 
     
-    if ("--gui", "-g") in argv:
+    if ("--gui", "-g") in sys.argv:
         try:
-            gui_option = argv[argv.index("--gui") + 1]
+            gui_option = sys.argv[sys.argv.index(("--gui", "-g")) + 1]
         except IndexError:
             raise RuntimeError("Unspecified GUI option")
     else:
