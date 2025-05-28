@@ -1,11 +1,11 @@
 import sys
 
-if ("--ignore", "-i") not in sys.argv:
+if "--ignore" not in sys.argv or "-i" not in sys.argv:
     from subprocess import Popen
     from time import sleep
     import signal
 
-    if ("--fname", "-f") in sys.argv:
+    if "--fname" in sys.argv or "-f" not in sys.argv:
         try:
             output_file_name = sys.argv[sys.argv.index(("--fname", "-f")) + 1]
         except IndexError:
@@ -13,7 +13,7 @@ if ("--ignore", "-i") not in sys.argv:
     else:
         output_file_name = "stats.prof"
 
-    if ("--gui", "-g") in sys.argv:
+    if "--gui" in sys.argv or "-g" not in sys.argv:
         try:
             gui_option = sys.argv[sys.argv.index(("--gui", "-g")) + 1]
         except IndexError:
