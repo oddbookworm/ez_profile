@@ -29,7 +29,7 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
 
     elif "-g" in sys.argv:
         try:
-            gui_option = sys.argv[sys.argv.index("--gui") + 1]
+            gui_option = sys.argv[sys.argv.index("--g") + 1]
         except IndexError:
             raise RuntimeError("Unspecified GUI option")
 
