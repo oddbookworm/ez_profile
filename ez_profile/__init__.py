@@ -41,8 +41,8 @@ if ("--ignore", "-i") not in sys.argv:
     sleep(10)
 
 		 if sys.platform == "win32":
-        sv_proc.send_signal(signal.CTRL_C_EVENT)
+sv_proc.send_signal(signal.CTRL_C_EVENT)
     else:
-        sv_proc.send_signal(signal.SIGINT)
+sv_proc.send_signal(signal.SIGINT)
 
     sys.exit()
