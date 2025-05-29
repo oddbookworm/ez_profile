@@ -55,6 +55,10 @@ For example, if you want to use [tuna](https://pypi.org/project/tuna/) instead, 
 python file.py --gui tuna
 ```
 
+## Contributing
+
+Follow the steps in [docs/contributing.md](https://github.com/oddbookworm/ez_profile/tree/main/docs/contributing.md)
+
 ## Credits
 
 Credit for the idea goes to [matiiss](https://github.com/matiiss)
