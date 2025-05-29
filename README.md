@@ -1,5 +1,7 @@
 # ez_profile
 
+Releases can be installed via pip from [pypi](https://pypi.org/project/ez-profile/)
+
 A simple library for a one-liner performance profile using `cProfile`
 and `snakeviz`/`tuna`! Upon import, will profile your code (profile file will
 be `stats.prof` in your current working directory) and launch `snakeviz`(you can configure it to use `tuna`; see the section below)
@@ -17,10 +19,10 @@ This is meant for internal usage, but if you dont want `ez_profile` to profile
 your code, you can pass the `--ignore` or `-i` commandline flag. This will bypass `ez_profile`
 completely.
 
-## Installation 
+## Installation
 
-just run this in the terminal: 
-```py 
+just run this in the terminal:
+```py
 pip install ez_profile
 ```
 ## Usage

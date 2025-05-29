@@ -33,6 +33,9 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
         except IndexError:
             raise RuntimeError("Unspecified GUI option")
 
+    else:
+        gui_option = 'snakeviz'
+
     profile_proc = Popen(
         [
             f"{sys.executable}",
@@ -47,6 +50,7 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
 
     try:
         profile_proc.wait()
+
     except KeyboardInterrupt:
         pass
 
