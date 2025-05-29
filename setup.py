@@ -17,7 +17,7 @@ setup(
     license="MIT",
     install_requires=['snakeviz', 'tuna'],
     url="https://github.com/oddbookworm/ez_profile",
-    download_url="https://github.com/oddbookworm/ez_profile/archive/refs/tags/v{__ver}.tar.gz",
+    download_url=f"https://github.com/oddbookworm/ez_profile/archive/refs/tags/v{__ver}.tar.gz",
     keywords=["ez_profile"],
     classifiers=[],
 )
