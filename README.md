@@ -56,9 +56,9 @@ python file.py --fname "custom_filename.prof"
 For example, if you want to use [tuna](https://pypi.org/project/tuna/) instead, you can.
 ```sh
 python file.py --gui tuna
-m```
+```
 
-**New in 2.0.0**
+**New in 0.2.0**
 `-f` and `-g` command line arguments added as a shorter form of `--fname` and `--gui`.
 ```sh
 python file.py -g tuna
