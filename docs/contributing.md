@@ -1,6 +1,7 @@
 # Contributing
 
-First of all, thank you for considering to contribute. It means a lot to me! To contribute, make sure to follow the steps given below.
+First of all, thank you for considering to contribute. It means a lot to me! To contribute, make sure to 
+follow the steps given below.
 
 ## Building
 
@@ -12,7 +13,12 @@ After this, enter the ez_profile folder:
 ```sh
 cd ez_profile
 ```
-Now make whatever changes you want to the source code. When you are done, build it by first installing the developer dependencies:
+If you want to contribute, you need to create a separate branch which would later be merged into `dev`.
+```sh
+git switch -c <branch-name>
+```
+Now make whatever changes you want to the source code. When you are done, build it by first installing 
+the developer dependencies:
 ```sh
 pip install -r requirements.txt
 ```
@@ -24,6 +30,16 @@ And to install in editable mode:
 ```sh
 pip install -e .
 ```
+
+When you are done, you can add and commit your changes and push then to GitHub.
+```sh
+git add . # adds the whole folder
+git commit -m "commit message"
+git push -u origin <branch-name> 
+```
+And there you have it! Now you can go to the `ez_profile` repository on GitHub and create a pull request. 
+Make sure that you merge it into the `dev branch`, not `main`. Make sure to give a detailed explanation 
+on what your pull request is about.
 
 ## Contributing Guidelines
 
