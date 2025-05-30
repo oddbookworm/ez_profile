@@ -1,28 +1,40 @@
-from sys import argv
+import sys
 
-if "--ignore" not in argv:
+if "--ignore" not in sys.argv and "-i" not in sys.argv:
     from subprocess import Popen
     from time import sleep
-    import sys
     import signal
 
-    if "--fname" in argv:
+    if "--fname" in sys.argv:
         try:
-            output_file_name = argv[argv.index("--fname") + 1]
+            output_file_name = sys.argv[sys.argv.index("--fname") + 1]
         except IndexError:
             raise RuntimeError("Unspecified filename")
-    
-    else:
-	output_file_name = "stats.prof"
 
-    if "--gui" in argv:
+    elif "-f" in sys.argv:
         try:
-            gui_option = argv[argv.index("--gui") + 1]
+            output_file_name = sys.argv[sys.argv.index("-f") + 1]
+        except IndexError:
+            raise RuntimeError("Unspecified filename")
+
+    else:
+        output_file_name = "stats.prof"
+
+
+    if "--gui" in sys.argv:
+        try:
+            gui_option = sys.argv[sys.argv.index("--gui") + 1]
+        except IndexError:
+            raise RuntimeError("Unspecified GUI option")
+
+    elif "-g" in sys.argv:
+        try:
+            gui_option = sys.argv[sys.argv.index("-g") + 1]
         except IndexError:
             raise RuntimeError("Unspecified GUI option")
 
     else:
-	gui_option = 'snakeviz'
+        gui_option = 'snakeviz'
 
     profile_proc = Popen(
         [
@@ -31,10 +43,11 @@ if "--ignore" not in argv:
             "cProfile",
             "-o",
             output_file_name,
-            f"{argv[0]}",
+            f"{sys.argv[0]}",
             "--ignore",
         ]
     )
+
     try:
         profile_proc.wait()
 
@@ -43,6 +56,10 @@ if "--ignore" not in argv:
 
     sv_proc = Popen([sys.executable, "-m", gui_option, output_file_name])
     sleep(10)
-    sv_proc.send_signal(signal.SIGINT)
+
+    if sys.platform == "win32":
+        sv_proc.send_signal(signal.CTRL_C_EVENT)
+    else:
+        sv_proc.send_signal(signal.SIGINT)
 
     sys.exit()
