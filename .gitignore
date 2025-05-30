@@ -1,12 +1,17 @@
+# environments
 venv
-*.prof
-main.py
-ez_profile/__pycache__
-.vscode
-*.whl
 
+# configs
+.vscode
+
+# builds/temp stuff
+*.whl
 build
 dist
 ez_profile.egg-info
+.ruff_cache
+__pycache__
 
-.pypirc
+# other miscellaneous files
+*.prof
+main.py
