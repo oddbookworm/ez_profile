@@ -23,9 +23,11 @@ your code, you can pass the `--ignore` or `-i` commandline flag. This will bypas
 ## Installation
 
 just run this in the terminal:
+
 ```sh
 pip install ez_profile
 ```
+
 ## Usage
 
 Notes about usage:
@@ -46,6 +48,7 @@ import ez_profile # this is all you need
 
 **New in 0.1.6**
 `--fname` commandline argument to specify where you want the output profile to be saved
+
 ```sh
 python file.py --fname "/path/to/custom/location/file.prof"
 python file.py --fname "custom_filename.prof"
@@ -61,6 +64,7 @@ python file.py --gui tuna
 
 **New in 0.2.0**
 `-f` and `-g` command line arguments added as a shorter form of `--fname` and `--gui`.
+
 ```sh
 python file.py -g tuna
 

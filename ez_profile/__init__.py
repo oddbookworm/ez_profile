@@ -1,9 +1,9 @@
 import sys
 
 if "--ignore" not in sys.argv and "-i" not in sys.argv:
+    import signal
     from subprocess import Popen
     from time import sleep
-    import signal
 
     if "--fname" in sys.argv:
         try:
@@ -19,7 +19,6 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
 
     else:
         output_file_name = "stats.prof"
-
 
     if "--gui" in sys.argv:
         try:
