@@ -12,13 +12,13 @@ repos:
         exclude: |
           (?x)^(
               ^.*\.py$
-              | LICENSE
+              | docs/LICENSE
           )$
       - id: trailing-whitespace
         exclude: |
           (?x)^(
               ^.*\.py$
-              | LICENSE
+              | docs/LICENSE
           )$
 
   - repo: https://github.com/prettier/pre-commit
