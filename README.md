@@ -1,4 +1,4 @@
-# ez_profile
+#ez_profile
 
 Releases can be installed via pip from [pypi](https://pypi.org/project/ez-profile/)
 
@@ -38,7 +38,7 @@ completed.
 Usage:
 
 ```py
-# note that this should be at the top of your script
+#note that this should be at the top of your script
 import ez_profile # this is all you need
 
 <all of your other code>

@@ -34,7 +34,7 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
             raise RuntimeError("Unspecified GUI option")
 
     else:
-        gui_option = 'snakeviz'
+        gui_option = "snakeviz"
 
     profile_proc = Popen(
         [

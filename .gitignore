@@ -1,12 +1,11 @@
 venv
 *.prof
 main.py
-ez_profile/__pycache__
 .vscode
 *.whl
 
 build
 dist
 ez_profile.egg-info
-
-.pypirc
+.ruff_cache
+__pycache__
