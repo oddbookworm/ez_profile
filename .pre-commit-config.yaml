@@ -11,17 +11,13 @@ repos:
       - id: end-of-file-fixer
         exclude: |
           (?x)^(
-              ^docs/licenses/.*$
-              | ^.*\.svg$
-              | ^.*\.sfd$
-              | docs/LGPL.txt
+              ^.*\.py$
+              | LICENSE
           )$
       - id: trailing-whitespace
         exclude: |
           (?x)^(
-              ^docs/licenses/.*$
-              | ^.*\.svg$
-              | ^.*\.sfd$
+              ^.*\.py$
               | LICENSE
           )$
 
