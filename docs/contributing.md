@@ -1,12 +1,12 @@
 # Contributing
 
-First of all, thank you for considering to contributing. It means alot to me! To contribute, make sure to follow the steps given below.
+First of all, thank you for considering to contribute. It means a lot to me! To contribute, make sure to follow the steps given below.
 
 ## Building
 
 To build ez_profile, you first need to fork this repository. Then you need to clone it using this command
 ```sh
-git clone https://github.com/<your-username>/ez_profile/git
+git clone https://github.com/<your-username>/ez_profile.git
 ```
 After this, enter the ez_profile folder:
 ```sh
@@ -16,11 +16,7 @@ Now make whatever changes you want to the source code. When you are done, build 
 ```sh
 pip install -r requirements.txt
 ```
-Now run this command:
-```sh
-python setup.py sdist
-```
-A folder named `dist` should be created and in it, would be the `.tar.gz` file. To install it, go to the main folder and install using this command:
+Now install using this command:
 ```sh
 pip install .
 ```
