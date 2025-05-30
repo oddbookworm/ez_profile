@@ -26,10 +26,11 @@ git checkout <descriptive_branch_name>
 ```
 
 Now make whatever changes you want to the source code. When you are done, build it by first installing
-the developer dependencies:
+the developer dependencies and the pre-commit hooks:
 
 ```sh
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
+pre-commit install
 ```
 
 Now install using this command:
@@ -47,14 +48,15 @@ pip install -e .
 When you are done, you can add all your changes which you intend to commit.
 
 ```sh
-git add .
+git add <modified files>
 ```
 
 And there you have it! Now you can go to the `ez_profile` repository on GitHub and create a pull request.
-Make sure that you merge it into the `dev`, not `main`.
+Make sure that you merge it into the `dev` branch, not `main` branch. The `main` branch is updated with
+the most recent release's code, while the `dev` branch is the active development branch.
 
 ## Contributing Guidelines
 
-- Format your code with `ruff`.
+- Format your code with `ruff` (should also be run by `pre-commit`).
 - Make sure your code is styled according to the [PEP 8](https://peps.python.org/pep-0008/) style guide.
 - Make sure to give a detailed explanation on what your pull request is about.
