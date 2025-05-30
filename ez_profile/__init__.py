@@ -2,6 +2,7 @@ import sys
 
 if "--ignore" not in sys.argv and "-i" not in sys.argv:
     import signal
+    import webbrowser
     from subprocess import Popen
     from time import sleep
 
@@ -55,6 +56,7 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
 
     if gui_option == "cprofilev":
         sv_proc = Popen([sys.executable, "-m", gui_option, "-f", output_file_name])
+        webbrowser.open("http://127.0.0.1:4000")
     else:
         sv_proc = Popen([sys.executable, "-m", gui_option, output_file_name])
     sleep(10)
