@@ -1,10 +1,8 @@
 # environments
 venv
-node_modules
 
 # configs
 .vscode
-.husky
 
 # builds/temp stuff
 *.whl
