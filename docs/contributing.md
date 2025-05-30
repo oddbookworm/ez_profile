@@ -38,11 +38,13 @@ git commit -m "commit message"
 git push -u origin <branch-name> 
 ```
 And there you have it! Now you can go to the `ez_profile` repository on GitHub and create a pull request. 
-Make sure that you merge it into the `dev branch`, not `main`. Make sure to give a detailed explanation 
-on what your pull request is about.
+Make sure that you merge it into the `dev branch`, not `main`. 
 
 ## Contributing Guidelines
 
-Make sure your code is styled according to the [PEP 8](https://peps.python.org/pep-0008/) style guide.
+- Format your code with `ruff`.
+- Make sure your code is styled according to the [PEP 8](https://peps.python.org/pep-0008/) style guide.
+- Make sure to give a detailed explanation on what your pull request is about.
+
 
 
