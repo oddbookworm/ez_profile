@@ -63,4 +63,3 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
         sv_proc.send_signal(signal.SIGINT)
 
     sys.exit()
-  
