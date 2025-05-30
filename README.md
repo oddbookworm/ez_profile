@@ -3,10 +3,10 @@
 Releases can be installed via pip from [pypi](https://pypi.org/project/ez-profile/)
 
 A simple library for a one-liner performance profile using `cProfile`
-and `snakeviz`/`tuna`! Upon import, will profile your code (profile file will
+and `snakeviz`/`tuna`/`cprofilev`! Upon import, will profile your code (profile file will
 be `stats.prof` in your current working directory) and launch `snakeviz`(you
-can configure it to use `tuna`; see the section below)
-to visualize it. The snakeviz webserver will be open for about 5 seconds
+can configure it to use `tuna` or `cprofilev`; see the section below)
+to visualize it. The visualizer webserver will be open for about 10 seconds
 before it gets killed by `ez_profile`. The webpage will still be visible
 and interactable though, until you refresh the page.
 
@@ -63,12 +63,17 @@ python file.py --gui tuna
 ```
 
 **New in 0.2.0**
-`-f` and `-g` command line arguments added as a shorter form of `--fname` and `--gui`.
+
+- `-f` and `-g` command line arguments added as a shorter form of `--fname` and `--gui`.
+- Support for `cprofilev` visualizer (this does not work in previous versions because it requires
+  an extra commandline flag). This visualizer is also now included in the install as well.
 
 ```sh
 python file.py -g tuna
 
 python file.py -f "filename.prof"
+
+python main.py -g cprofilev -f output.prof
 ```
 
 ## Contributing

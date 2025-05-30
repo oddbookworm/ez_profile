@@ -53,7 +53,10 @@ if "--ignore" not in sys.argv and "-i" not in sys.argv:
     except KeyboardInterrupt:
         pass
 
-    sv_proc = Popen([sys.executable, "-m", gui_option, output_file_name])
+    if gui_option == "cprofilev":
+        sv_proc = Popen([sys.executable, "-m", gui_option, "-f", output_file_name])
+    else:
+        sv_proc = Popen([sys.executable, "-m", gui_option, output_file_name])
     sleep(10)
 
     if sys.platform == "win32":

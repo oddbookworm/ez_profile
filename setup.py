@@ -15,7 +15,7 @@ setup(
     author="oddbookworm",
     author_email="andrewryancoffey@hotmail.com",
     license="MIT",
-    install_requires=["snakeviz", "tuna"],
+    install_requires=["snakeviz", "tuna", "cprofilev"],
     url="https://github.com/oddbookworm/ez_profile",
     download_url=f"https://github.com/oddbookworm/ez_profile/archive/refs/tags/v{__ver}.tar.gz",
     keywords=["ez_profile"],

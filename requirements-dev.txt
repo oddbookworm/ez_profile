@@ -5,3 +5,4 @@ setuptools
 ruff
 pre-commit
 clang-format
+cprofilev
